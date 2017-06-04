@@ -1,0 +1,282 @@
+@charset "utf-8";
+#app {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #EEEEEE;
+    header {
+        width: 100%;
+        height: 2.5rem;
+        background: #F8F8F8;
+        display: flex;
+        div {
+            flex: 1;
+            height: 100%;
+            margin: 0.1rem;
+            text-align: center;
+            a {
+                font-size: 0.9rem;
+                width: 100%;
+                height: 100%;
+                line-height: 2.5rem;
+                color: #444;
+                font-family: '楷体';
+            }
+            p {
+                display: inline-block;
+                font-size: 0.7rem;
+                color: #666;
+                line-height: 2.5rem;
+            }
+            .icon {
+                font-size: 0.9rem;
+                color: #666;
+                position: relative;
+                i {
+                    width: 0.4rem;
+                    height: 0.4rem;
+                    border-radius: 50%;
+                    display: inline-block;
+                    position: absolute;
+                    background: #f50;
+                    top: -0.2rem;
+                    right: -0.2rem;
+                }
+            }
+        }
+    }
+    section {
+        flex: 1;
+        overflow-y: scroll;
+        .nav {
+            width: 100%;
+            height: 8.5rem;
+            border-bottom: 0.05rem solid #ccc;
+            background: #f8f8f8;
+            margin-bottom: 1rem;
+            &>h1 {
+                width: 100%;
+                height: 2.25rem;
+                background: #fff;
+                display: flex;
+                padding: 0 0.75rem;
+                line-height: 2.25rem;
+                
+                &>a {
+                    width: 100%;
+                    height: 100%;
+                    font-size: 0.8rem;
+                    line-height: 2.25rem;
+                    color: #3D4245;
+                    position: relative;
+                    font-family: "楷体";
+                    font-weight: 400;
+                    .lab{
+                        top: 0.62rem;
+                        left: 0.35rem;
+                    }
+                    .imgs{
+                        top: 0.62rem;
+                        left: 1.85rem;
+                    }
+                    span{
+                        margin-left: 2.8rem;
+                        display: inline-block;
+                        height: 100%;
+                        line-height: 2.25rem; 
+                    }
+                    i{
+                        color: #aaa;
+                        font-size: 1rem;
+                    }
+                    p{
+                        position: absolute;
+                        margin-left: 2.6rem;
+                        display: inline-block;
+                        font-size: 0.7rem;
+                    }
+                }
+            }
+            .onebox{
+                width: 100%;
+                font-weight: 400;
+                font-family: "楷体";
+                margin-top: 0.5rem;
+                font-size: 0.7rem;
+                display: flex;
+                .oneboxa{
+                    width: 2.2rem;
+                    height: 5.75rem;
+                    position: relative;
+                    text-align: center;
+                    .lab{
+                        top: 2.2rem;
+                    }
+                }
+                .oneboxb{
+                    flex: 1;
+                    display: flex;
+                    .oneboxb-a{
+                        width: 4.5rem;
+                        height: 100%;
+                        position: relative;
+                        img{
+                            width: 100%;
+                        }
+                        span{
+                            display: inline-block;
+                            position: absolute;
+                            padding: 0.1rem;
+                            color: #fff;
+                            background: #F81131;
+                            font-size: 0.6rem;
+                            bottom: 0.5rem;
+                        }
+                    }
+                    .oneboxb-b{
+                        flex: 1;
+                        margin-left: 0.5rem;
+                        h1{
+                            height: 2rem;
+                            line-height: 1rem;
+                            font-size: 0.8rem;
+                            -webkit-line-clamp: 2;
+                            word-break: break-all;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            font-weight: 400;
+                            display: -webkit-box;
+                            -webkit-box-orient: vertical;
+                        }
+                        p{
+                            font-size: 0.7rem;
+                            color: #999;
+                        }
+                        span{
+                            display: inline-block;
+                            color: #f50;
+                            padding-top: 0.5rem;
+                            font-size: 0.7rem;
+                            u{
+                                font-family: "楷体";
+                                text-decoration: line-through;
+                                font-weight: 400;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    footer{
+        width: 100%;
+        height: 5rem;
+        display: flex;
+        flex-direction: column;
+        .top{
+            flex: 1;
+            background: #fff;
+            border-top: 0.05rem solid #ccc;
+            .topleft{
+                height: 100%;
+                position: relative;
+                font-size: 0.8rem;
+                .lab{
+                    top: 0.75rem;
+                    left: 1rem;
+                }
+                
+                &>span{
+                    width: 2rem;
+                    font-size: 0.8rem;
+                    position: absolute;
+                    left:2.5rem;
+                    top: 0.75rem;
+                    color: #666;
+                    font-family: "楷体";
+                }
+                .smbox{
+                    height: 100%;
+                    top: 0;
+                    position: absolute;
+                    left: 4.5rem;
+                    font-family: "楷体";
+                    color: #666666;
+                    p{
+                        display: inline-block;
+                        margin-top: 0.8rem;
+                    }
+                    b{
+                        color: #f50;
+                        font-weight: 400;
+                    }
+                    &>span{
+                        font-size: 0.7rem;
+                    }
+                    
+                }
+                button{
+                    position: absolute;
+                    right: 0;
+                    display: inline-block;
+                    height: 100%;
+                    width: 3.75rem;
+                    background: #f50;
+                    color: #fff;
+                    border: 0;
+                    font-size: 0.8rem;
+                    font-family: "楷体";
+                }
+                
+            }
+        }
+        .bottom{
+            flex: 1;
+            display: flex;
+            background: #f9f9f0;
+            a{
+                flex: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                font-weight: 400;
+                color: #3d4245;
+                i{
+                    font-size: 1rem;
+                    position: relative;
+                    &>span {
+                    width: 0.4rem;
+                    height: 0.4rem;
+                    border-radius: 50%;
+                    display: inline-block;
+                    position: absolute;
+                    background: #f50;
+                    right: -0.2rem;
+                }
+                }
+                &>span{
+                    font-size: 0.7rem;
+                }
+            }
+        }
+    }
+}
+.lab {
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    display: inline-block;
+    background: url("../img/b.png") no-repeat;
+    background-size: 100% 100%;
+}
+.tex:checked+.lab {
+    background: url("../img/a.png") no-repeat;
+    background-size: 100% 100%;
+}
+.imgs{
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+}

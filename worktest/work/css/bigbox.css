@@ -1,0 +1,44 @@
+@charset "UTF-8";
+#bigbox { width: 100%; height: 100%; display: flex; flex-direction: column; }
+#bigbox header { width: 100%; height: 1.26761rem; position: fixed; top: 0; left: 0; z-index: 9; display: flex; }
+#bigbox header .heaone, #bigbox header .heathree { color: #fff; flex-basis: 1.97183rem; display: flex; justify-content: center; align-items: center; flex-direction: column; font-size: 0.39437rem; font-family: "楷体"; }
+#bigbox header .heatwo { flex: 1; padding-top: 0.19718rem; position: relative; font-size: 0.39437rem; color: #ccc; }
+#bigbox header .heatwo input { width: 100%; height: 0.84507rem; background: rgba(222, 222, 222, 0.6); border: 0; border-radius: 0.16901rem; text-align: center; font-size: 0.4507rem; font-family: "楷体"; font-weight: 400; }
+#bigbox header .heatwo i { position: absolute; color: #666; left: 50%; top: 0.3662rem; margin-left: -1.83099rem; font-size: 0.4507rem; }
+#bigbox section { flex: 1; overflow-y: scroll; }
+#bigbox section .banner { width: 100%; height: auto; position: relative; font-size: 0.39437rem; font-family: "楷体"; }
+#bigbox section .banner img { width: 100%; height: auto; }
+#bigbox section .banner > ul { display: flex; position: absolute; bottom: 0.28169rem; right: 0.56338rem; }
+#bigbox section .banner > ul > li { width: 0.33803rem; height: 0.33803rem; border-radius: 0.05634rem; margin: 0 0.08451rem; cursor: pointer; background: rgba(222, 222, 222, 0.6); }
+#bigbox section .banner a { position: absolute; padding: 0.05634rem; border: 0.02817rem solid #ccc; color: #FFF; bottom: 0.14085rem; left: 0.28169rem; font-size: 0.28169rem; }
+#bigbox section .uls { display: flex; flex-wrap: wrap; margin-top: 0.28169rem; font-size: 0.39437rem; font-family: "楷体"; }
+#bigbox section .uls li { width: 20%; height: 2.25352rem; display: flex; justify-content: center; align-items: center; flex-direction: column; }
+#bigbox section .uls li i { width: 1.40845rem; height: 1.40845rem; background: -webkit-linear-gradient(#ffe35c, #FFA824); border-radius: 0.56338rem; text-align: center; line-height: 1.40845rem; font-size: 0.61972rem; color: #FFF; text-shadow: 0 0.05634rem 0.05634rem #F18110; }
+#bigbox section .uls li span { color: #666666; line-height: 0.84507rem; }
+#bigbox section .uls li:nth-of-type(2) i, #bigbox section .uls li:nth-of-type(4) i, #bigbox section .uls li:nth-of-type(6) i, #bigbox section .uls li:nth-of-type(8) i { background: -webkit-linear-gradient(#fac354, #FF6648); }
+#bigbox section .uls li:nth-of-type(3) i, #bigbox section .uls li:nth-of-type(7) i, #bigbox section .uls li:nth-of-type(10) i { background: -webkit-linear-gradient(#ef98ff, #B840FF); }
+#bigbox section .news { width: 100%; height: 1.26761rem; margin: 0.28169rem 0; padding-left: 2.53521rem; position: relative; }
+#bigbox section .news img { width: 1.40845rem; height: 100%; position: absolute; left: 0.42254rem; top: 0; }
+#bigbox section .news .line { width: 0.05634rem; height: 0.56338rem; background: #ccc; position: absolute; left: 2.02817rem; top: 0.42254rem; }
+#bigbox section .news aside { width: 100%; height: auto; }
+#bigbox section .news aside h1 { font-size: 0.4507rem; color: #333; padding-left: 0.33803rem; line-height: 0.67606rem; background: url(../img/li.png) no-repeat left center; background-size: 0.14085rem; padding-right: 0.14085rem; font-family: "楷体"; font-weight: 400; }
+#bigbox section .hot { width: 100%; height: auto; border-top: 0.28169rem solid #eee; }
+#bigbox section .hot h1 { width: 100%; height: 1.12676rem; background: #FFF; display: flex; justify-content: space-between; align-items: center; padding: 0 0.28169rem; }
+#bigbox section .hot h1 .onea { font-weight: 400; font-size: 0.39437rem; }
+#bigbox section .hot h1 .onea i { font-size: 0.50704rem; color: #FA4B4B; }
+#bigbox section .hot h1 .onea span { position: relative; top: 0; font-size: 0.4507rem; color: #FA4B4B; font-family: "楷体"; font-weight: 400; }
+#bigbox section .hot h1 .onea time { padding: 0.05634rem; border: 0.02817rem solid #ccc; border-radius: 0.05634rem; color: #ccc; margin: 0 0.08451rem; font-family: "楷体"; font-weight: 400; font-size: 0.39437rem; }
+#bigbox section .hot h1 .onea time:nth-of-type(3) { color: #FA4B4B; border-color: #FA4B4B; }
+#bigbox section .hot h1 .twoa { font-weight: 400; font-size: 0.39437rem; }
+#bigbox section .hot h1 .twoa span { background: #FFC001; padding: 0.05634rem 0.14085rem 0.11268rem 0.14085rem; border-radius: 0.14085rem; color: #783E18; position: relative; font-size: 0.39437rem; }
+#bigbox section .hot h1 .twoa i { font-size: 0.67606rem; color: #999; position: relative; top: 0.08451rem; }
+#bigbox section .hot .nav { width: 100%; height: auto; display: flex; }
+#bigbox section .hot .nav > div { flex: 1; margin-left: 0.28169rem; }
+#bigbox section .hot .nav > div a { width: 100%; display: inline-block; border: 0.02817rem solid #ccc; }
+#bigbox section .hot .nav > div a img { width: 60%; height: auto; margin-left: 20%; }
+#bigbox section .hot .nav > div > .box { width: 96%; height: 1.5493rem; background: #ddd; margin-left: 2%; position: relative; font-size: 0.39437rem; font-family: "楷体"; }
+#bigbox section .hot .nav > div > .box h2 { color: #DD0000; font-size: 0.61972rem; line-height: 0.84507rem; }
+#bigbox section .hot .nav > div > .box u { color: #999; text-decoration: line-through; }
+#bigbox section .hot .nav > div > .box span { position: absolute; display: inline-block; width: 1.46479rem; height: 1.5493rem; background: url(../img/jt.png) no-repeat; background-size: 100% 100%; right: 0.28169rem; top: -0.11268rem; color: #fff; text-align: center; line-height: 1.12676rem; font-size: 0.4507rem; }
+
+/*# sourceMappingURL=bigbox.css.map */

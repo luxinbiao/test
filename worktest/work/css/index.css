@@ -1,0 +1,52 @@
+@charset "UTF-8";
+#app { width: 100%; height: 100%; display: flex; flex-direction: column; background: #EEEEEE; }
+#app header { width: 100%; height: 2.5rem; background: #F8F8F8; display: flex; }
+#app header div { flex: 1; height: 100%; margin: 0.1rem; text-align: center; }
+#app header div a { font-size: 0.9rem; width: 100%; height: 100%; line-height: 2.5rem; color: #444; font-family: '楷体'; }
+#app header div p { display: inline-block; font-size: 0.7rem; color: #666; line-height: 2.5rem; }
+#app header div .icon { font-size: 0.9rem; color: #666; position: relative; }
+#app header div .icon i { width: 0.4rem; height: 0.4rem; border-radius: 50%; display: inline-block; position: absolute; background: #f50; top: -0.2rem; right: -0.2rem; }
+#app section { flex: 1; overflow-y: scroll; }
+#app section .nav { width: 100%; height: 8.5rem; border-bottom: 0.05rem solid #ccc; background: #f8f8f8; margin-bottom: 1rem; }
+#app section .nav > h1 { width: 100%; height: 2.25rem; background: #fff; display: flex; padding: 0 0.75rem; line-height: 2.25rem; }
+#app section .nav > h1 > a { width: 100%; height: 100%; font-size: 0.8rem; line-height: 2.25rem; color: #3D4245; position: relative; font-family: "楷体"; font-weight: 400; }
+#app section .nav > h1 > a .lab { top: 0.62rem; left: 0.35rem; }
+#app section .nav > h1 > a .imgs { top: 0.62rem; left: 1.85rem; }
+#app section .nav > h1 > a span { margin-left: 2.8rem; display: inline-block; height: 100%; line-height: 2.25rem; }
+#app section .nav > h1 > a i { color: #aaa; font-size: 1rem; }
+#app section .nav > h1 > a p { position: absolute; margin-left: 2.6rem; display: inline-block; font-size: 0.7rem; }
+#app section .nav .onebox { width: 100%; font-weight: 400; font-family: "楷体"; margin-top: 0.5rem; font-size: 0.7rem; display: flex; }
+#app section .nav .onebox .oneboxa { width: 2.2rem; height: 5.75rem; position: relative; text-align: center; }
+#app section .nav .onebox .oneboxa .lab { top: 2.2rem; }
+#app section .nav .onebox .oneboxb { flex: 1; display: flex; }
+#app section .nav .onebox .oneboxb .oneboxb-a { width: 4.5rem; height: 100%; position: relative; }
+#app section .nav .onebox .oneboxb .oneboxb-a img { width: 100%; }
+#app section .nav .onebox .oneboxb .oneboxb-a span { display: inline-block; position: absolute; padding: 0.1rem; color: #fff; background: #F81131; font-size: 0.6rem; bottom: 0.5rem; }
+#app section .nav .onebox .oneboxb .oneboxb-b { flex: 1; margin-left: 0.5rem; }
+#app section .nav .onebox .oneboxb .oneboxb-b h1 { height: 2rem; line-height: 1rem; font-size: 0.8rem; -webkit-line-clamp: 2; word-break: break-all; text-overflow: ellipsis; overflow: hidden; font-weight: 400; display: -webkit-box; -webkit-box-orient: vertical; }
+#app section .nav .onebox .oneboxb .oneboxb-b p { font-size: 0.7rem; color: #999; }
+#app section .nav .onebox .oneboxb .oneboxb-b span { display: inline-block; color: #f50; padding-top: 0.5rem; font-size: 0.7rem; }
+#app section .nav .onebox .oneboxb .oneboxb-b span u { font-family: "楷体"; text-decoration: line-through; font-weight: 400; }
+#app footer { width: 100%; height: 5rem; display: flex; flex-direction: column; }
+#app footer .top { flex: 1; background: #fff; border-top: 0.05rem solid #ccc; }
+#app footer .top .topleft { height: 100%; position: relative; font-size: 0.8rem; }
+#app footer .top .topleft .lab { top: 0.75rem; left: 1rem; }
+#app footer .top .topleft > span { width: 2rem; font-size: 0.8rem; position: absolute; left: 2.5rem; top: 0.75rem; color: #666; font-family: "楷体"; }
+#app footer .top .topleft .smbox { height: 100%; top: 0; position: absolute; left: 4.5rem; font-family: "楷体"; color: #666666; }
+#app footer .top .topleft .smbox p { display: inline-block; margin-top: 0.8rem; }
+#app footer .top .topleft .smbox b { color: #f50; font-weight: 400; }
+#app footer .top .topleft .smbox > span { font-size: 0.7rem; }
+#app footer .top .topleft button { position: absolute; right: 0; display: inline-block; height: 100%; width: 3.75rem; background: #f50; color: #fff; border: 0; font-size: 0.8rem; font-family: "楷体"; }
+#app footer .bottom { flex: 1; display: flex; background: #f9f9f0; }
+#app footer .bottom a { flex: 1; display: flex; justify-content: center; align-items: center; flex-direction: column; font-weight: 400; color: #3d4245; }
+#app footer .bottom a i { font-size: 1rem; position: relative; }
+#app footer .bottom a i > span { width: 0.4rem; height: 0.4rem; border-radius: 50%; display: inline-block; position: absolute; background: #f50; right: -0.2rem; }
+#app footer .bottom a > span { font-size: 0.7rem; }
+
+.lab { width: 1rem; height: 1rem; position: absolute; display: inline-block; background: url("../img/b.png") no-repeat; background-size: 100% 100%; }
+
+.tex:checked + .lab { background: url("../img/a.png") no-repeat; background-size: 100% 100%; }
+
+.imgs { position: absolute; width: 1rem; height: 1rem; }
+
+/*# sourceMappingURL=index.css.map */
