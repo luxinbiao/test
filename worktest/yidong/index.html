@@ -11,6 +11,9 @@
 				height: 300px;
 				background: #ccc;
 				opacity: 0.5;
+				position: absolute;
+				left: 0;
+				top: 0;
 			}
 		</style>
 	</head>
@@ -29,8 +32,13 @@
 			demo.addEventListener("touchmove",function(ev){
 				this.innerHTML=ev.touches.length;
 			})
-			demo.addEventListener("toucheng",function(){
-				this.innerHTML="touchend"
+			
+			
+			demo.addEventListener("touchend",function(){
+				this.style.display="none";
+			})
+			demo.addEventListener("touchstart",function(ev){
+				ev.preventDefault();
 			})
 		</script>
 	</body>
