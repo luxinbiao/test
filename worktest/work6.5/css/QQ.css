@@ -1,0 +1,55 @@
+.container { width: 100%; height: 100%; }
+.container .banner { position: fixed; z-index: 1000; position: fixed; right: 0.5rem; bottom: 4rem; width: 2.4rem; height: 2.8rem; background: url(../img/40956233.png) no-repeat; background-size: 100%; }
+.container > header { width: 100%; background: url(../img/headerbg.png) 6.95rem top no-repeat; background-size: 7.05rem 2.2rem; height: 2.3rem; border-bottom: 0.1rem solid #317ecb; }
+.container > header h1 { display: inline-block; width: 5.1rem; height: 1.5rem; background: url(../img/logo.png) no-repeat; background-size: 5.1rem 1.5rem; margin-top: 0.35rem; margin-left: 0.5rem; }
+.container > header span { font-size: 0.9rem; width: 2.1rem; display: inline-block; float: right; color: #FFF; height: 1.2rem; text-align: center; line-height: 1.2rem; background: #4998e7; border-radius: 0.25rem; margin-top: 0.6rem; margin-right: 0.5rem; }
+.container > nav { width: 100%; padding: 0.25rem; background: #4998e7; }
+.container > nav ul { display: flex; width: 100%; }
+.container > nav ul li { flex: 1; height: 1.5rem; text-align: center; }
+.container > nav ul li a { width: 100%; color: #FFF; line-height: 1.5rem; }
+.container > nav ul li:nth-of-type(5) { position: relative; }
+.container > nav ul li:nth-of-type(5) span { position: absolute; bottom: 0.25rem; border-width: 0.3rem; display: inline-block; border-style: solid; border-color: #FFFFFF transparent transparent transparent; }
+.container .carousel { width: 100%; height: 8.25rem; overflow: hidden; position: relative; }
+.container .carousel ul { height: 100%; position: absolute; }
+.container .carousel ul li { float: left; width: 16rem; height: 100%; position: relative; }
+.container .carousel ul li img { max-width: 100%; margin: 0 auto; }
+.container .carousel ul li h2 { position: absolute; color: #FFFFFF; z-index: 1; bottom: 0.25rem; left: 0.25rem; }
+.container .carousel span { clear: both; display: inline-block; width: 0.5rem; height: 0.5rem; border: 0.1rem solid dodgerblue; position: absolute; z-index: 1; right: 0.5rem; bottom: 0.8rem; }
+.container .carousel span:nth-of-type(1) { position: absolute; right: 1.5rem; }
+.container .hot { width: 100%; }
+.container .hot div { width: 100%; padding: 0.25rem 0.4rem; }
+.container .hot div > ul { width: 100%; }
+.container .hot div > ul li { height: 1.75rem; width: 100%; line-height: 1.75rem; min-width: 11.7rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.container .hot div > ul li:not(:last-child) { border-bottom: 0.05rem solid #eceef0; }
+.container .hot div > ul li > a { color: #458fce; font-size: 0.9rem; }
+.container .hot div > ul li > a:after { content: "|"; display: inline-block; margin: 0 0.25rem; height: 1.25rem; color: #CCCCCC; }
+.container .hot div > ul li span { position: relative; }
+.container .hot div > ul li span > a { font-size: 0.85rem; color: #333; }
+.container .hot div > ul li span img { position: absolute; }
+.container .login { margin: 0 0.5rem 1.1rem; border: 0.05rem solid #e0f0ff; background: #edf6ff; padding: 0.5rem 0; text-align: center; }
+.container .login span { color: #4998e7; display: inline-block; }
+.container .login span:after { content: ""; display: inline-block; width: 1.05rem; height: 1.05rem; vertical-align: -0.25rem; margin-left: 0.25rem; background: url(../img/xiazai.png) no-repeat; background-size: 1.05rem 1.05rem; }
+.container .news { width: 100%; }
+.container .news > header { width: 100%; height: 2rem; border-top: 0.1rem solid #9ac7ed; background: url(../img/headbg.png) no-repeat; background-size: 16rem 3.1rem; background-position: left -1.55rem; }
+.container .news > header span { display: inline-block; width: 3.2rem; height: 100%; line-height: 2rem; text-align: center; color: #2a70be; font-size: 0.9rem; }
+.container .news > header span:nth-of-type(1) { color: #c14545; margin-top: -0.1rem; border-top: 0.1rem solid #2a70be; background: url(../img/tab_ui.png) no-repeat; background-position: left top; }
+.container .news > nav { width: 100%; padding: 0 0.4rem; }
+.container .news > nav .one { padding: 0.5rem 0; border-bottom: 0.05rem solid #eceef0; overflow: hidden; }
+.container .news > nav .one a { display: block; color: #000; }
+.container .news > nav .one a div { width: 3.75rem; height: 2.75rem; padding: 0.05rem; border: 0.05rem solid #e0e0e0; float: left; line-height: 2.55rem; text-align: center; background: #e9f1f4; }
+.container .news > nav .one a div img { display: inline-block; max-width: 100%; margin: 0 auto; border: 0; }
+.container .news > nav .one a h2 { height: 1.1rem; line-height: 1.1rem; overflow: hidden; font-weight: 400; text-overflow: ellipsis; white-space: nowrap; padding-left: 0.25rem; font-size: 0.85rem; }
+.container .news > nav .one a span { display: block; float: right; margin-right: 0.5rem; margin-top: 0.15rem; height: 0.85rem; line-height: 0.85rem; text-align: right; font-size: 0.6rem; position: relative; color: #ccc; }
+.container .news > nav .one a span:before { left: -0.6rem; top: 0.2rem; content: ""; display: inline-block; width: 0.5rem; height: 100%; background: url(../img/icon_v2.png) no-repeat; background-size: 5.95rem 1.05rem; background-position: -4.2rem 0rem; position: absolute; }
+.container .news > nav ul { width: 100%; }
+.container .news > nav ul li { width: 100%; }
+.container .news > nav ul li:not(:last-child) { border-bottom: 0.05rem solid #eceef0; }
+.container .news > nav ul li h2 { height: 1.8rem; line-height: 1.8rem; font-weight: 400; }
+.container .news > nav ul li h2 a { font-size: 0.9rem; color: #333; display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.container .news > nav ul li h2 a i { display: inline-block; width: 1.2rem; height: 0.7rem; margin-right: 0.2rem; background: url(../img/flagicon.png) no-repeat; background-size: 8.4rem 0.7rem; background-position: -3.6rem 0; }
+.container .news > nav ul li h2 a i.onei { background-position: 0 0; }
+.container .news > nav .goin { height: 1.65rem; line-height: 1.65rem; margin: 0 0.4rem; border: 0.05rem solid #efefef; background-color: #f6f5f5; text-align: center; }
+.container .news > nav .goin a span { display: inline-block; position: relative; }
+.container .news > nav .goin a span:after { position: absolute; content: ""; display: inline-block; width: 1.05rem; height: 1.05rem; background: url(../img/icon_v2.png) no-repeat -3.15rem 0; background-size: 5.95rem 1.05rem; top: 0.3rem; right: -1.4rem; }
+
+/*# sourceMappingURL=QQ.css.map */
