@@ -201,10 +201,10 @@
 		</div>
 		<script>
 			document.documentElement.style.fontSize = innerWidth / 16 + "px";
-			document.addEventListener("touchstart", function(ev) {
+			var demo = document.getElementById("carousel");
+			demo.addEventListener("touchstart", function(ev) {
 				ev.preventDefault();
 			})
-			var demo = document.getElementById("carousel");
 			var list = document.getElementById("carul");
 			var lis = list.getElementsByTagName("li");
 			var spans = demo.getElementsByTagName("span");
@@ -215,6 +215,7 @@
 			var timer=null;
 			var ez = 0;
 			demo.addEventListener("touchstart", function(ev) {
+				clearInterval(timer);
 				x = ev.changedTouches[0].pageX;
 				left = list.offsetLeft;
 			})
@@ -226,7 +227,6 @@
 						return;
 					}
 					list.style.left = -(x - ev.changedTouches[0].pageX) + left + "px";
-
 				} 
 				else {
 					if(j > 0) {
@@ -267,7 +267,7 @@
 			}, 3000)
 			})
 			
-			 timer = setInterval(function() {
+			timer = setInterval(function() {
 				ez++
 				if(ez == 2) {
 					ez = 0;
