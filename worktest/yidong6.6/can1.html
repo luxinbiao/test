@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+		<script src="js/zepto.min.js"></script>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			body,
+			html {
+				height: 100%;
+				width: 100%;
+				overflow: hidden;
+			}
+			
+			ul {
+				list-style: none;
+			}
+			
+			#list {
+				width: 100%;
+			}
+			
+			#list li {
+				float: left;
+				overflow: hidden;
+			}
+			
+			#demo {
+				width: 100%;
+				height: 100%;
+				display: none;
+				background: #000;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<ul id="list">
+
+		</ul>
+		<div id="demo">
+			<img src="" alt="" id="imgs" />
+		</div>
+		<script>
+			$(function() {
+				var len = 16;
+				var simg = "";
+				$winw = $(window).width();
+				var tw = $winw / 4;
+				for(var i = 0; i < len; i++) {
+					simg += "<li style='width:" + tw + "px;height:" + tw + "px'><img src='img/"+i+".jpg' id='can" + i + "'></img style='width:" + tw + "px;height:" + tw + "px'></li>";
+				}
+				$("#list").html(simg);
+				$("#list").on("tap", "li", function() {
+					$("#demo").show();
+					var index = $(this).index();
+					demoimg(index);
+				})
+				$("#demo").on("tap", function() {
+					$(this).hide();
+				})
+
+				function demoimg(n) {
+					var t = new Image;
+					t.src = "img/" + n + ".large.jpg";
+					t.onload = function() {
+						$("#imgs").attr("src", t.src);
+						var tw = this.width;
+						var th = this.height;
+						var ww = $(window).width();
+						var wh = $(window).height();
+						var wsc=ww/tw;
+		   	     	   	var hsc=wh/th;
+						console.log(ww, wh, tw, th,wsc*th,hsc*tw);
+						if(tw > th){ //横板
+							$("#imgs").css({
+								width: ww,
+								height: wsc*th,
+								marginLeft:0,
+								marginTop: (wh-wsc*th)/2+"px"
+							})
+						} 
+						else if(th>tw){
+							$("#imgs").css({
+								height: wh,
+								width: hsc*tw,
+								marginTop:0,
+								marginLeft:(ww-hsc*tw)/2+"px"
+							})
+						}
+
+					}
+				}
+			})
+		</script>
+	</body>
+
+</html>
