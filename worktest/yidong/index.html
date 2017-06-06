@@ -5,41 +5,67 @@
 		<title></title>
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
 		<style>
-			#demo{
-				margin-top: 10px;
-				width: 300px;
-				height: 300px;
-				background: #ccc;
-				opacity: 0.5;
-				position: absolute;
-				left: 0;
-				top: 0;
+			*{margin: 0;padding: 0;}
+			html,body{width: 100%;height: 100%;}
+			a{
+				text-decoration: none;
+				color: #000;
+			}
+			div{
+				width: 100%;
+				height: 2rem;
+				line-height: 1.5rem;
+				padding-top: 1rem;
+				padding-left: 1rem;
+			}
+			span{
+				padding:0 0.5rem;
+				display: inline-block;
+				border: 1px solid #ccc;
 			}
 		</style>
 	</head>
 	<body>
-		<a href="http://baidu.com">baidu</a>
-		<div id="demo">baidu</div>
+		<div id="demo">
+			<a href="#" id="time">倒计时
+				<span>02</span>
+				:
+				<span>00</span>
+				:
+				<span>00</span>
+			</a>
+		</div>
 		<script>
-			var demo=document.querySelector("#demo");
+			var spans=document.getElementsByTagName("span");
+			var time=document.getElementById("time");
+			var t=7200;
+			var timer=null;
+			function gettime(n){
+				var h=parseInt(n/3600);
+				var m=parseInt((n/60)%60);
+				var s=parseInt(n%60);
+				if(h<10){
+					h="0"+h;
+				}
+				if(m<10){
+					m="0"+m;
+				}
+				if(s<10){
+					s="0"+s;
+				}
+				spans[0].innerHTML=h;
+				spans[1].innerHTML=m;
+				spans[2].innerHTML=s;
+			}
+			timer=setInterval(function(){
+				t--;
+				if(t==0){
+					clearInterval(timer);
+					time.innerHTML="时间到，请等待下个准点！"
+				}
+				gettime(t);
+			},1000)
 			
-			demo.addEventListener("click",function(){
-				this.innerHTML="click"
-			})
-			demo.addEventListener("touchstart",function(){
-				this.innerHTML="touchstart"
-			})
-			demo.addEventListener("touchmove",function(ev){
-				this.innerHTML=ev.touches.length;
-			})
-			
-			//点透bug
-			demo.addEventListener("touchend",function(){
-				this.style.display="none";
-			})
-			demo.addEventListener("touchstart",function(ev){
-				ev.preventDefault();
-			})
 		</script>
 	</body>
 </html>
