@@ -57,18 +57,29 @@
 				var len = 16;
 				var simg = "";
 				$winw = $(window).width();
-				var tw = $winw / 4;
+				var margin=2;
+				var tw = ($winw-margin*3) / 4;
 				var curindex = 0;
 
 				function ulimg() {
 					for(var i = 0; i < len; i++) {
-						simg +="<li style='width:"+tw+"px;height:"+tw+"px'><canvas id='can"+i+"'></canvas></li>";
+						if((i+1)%4==0){
+							margin=0;
+						}
+						else{
+							margin=2;
+						}
+						simg +="<li style='width:"+tw+"px;height:"+tw+"px;margin-right:"+margin+"px;margin-bottom:"+margin+"px'><canvas id='can"+i+"'></canvas></li>";
 						var t = new Image;
 						t.index = i;
 						t.src = "img/" + i + ".jpg";
 						t.onload = function() {
-							var ogc = $("#can" + this.index)[0].getContext("2d");
-							ogc.drawImage(this, 0, 0, t.width, t.height);
+							var ele=$("#can" + this.index)[0];
+							if(ele.offsetHeight<tw){
+								ele.style.height=tw+"px";
+							}
+							var ogc = ele.getContext("2d");
+							ogc.drawImage(this, 0, 0, tw, tw);
 						}
 					}
 					$("#list").html(simg);
@@ -139,7 +150,7 @@
 								marginLeft: (ww - hsc * tw) / 2 + "px"
 							})
 						}
-						if(callback) {
+						if(callback){
 							callback();
 						}
 					}
