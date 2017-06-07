@@ -5,6 +5,7 @@
 		<meta charset="UTF-8">
 		<title></title>
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+		<link rel="stylesheet" href="css/animate.min.css" />
 		<script src="js/zepto.min.js"></script>
 		<style>
 			* {
@@ -57,27 +58,62 @@
 				var simg = "";
 				$winw = $(window).width();
 				var tw = $winw / 4;
-				for(var i = 0; i < len; i++) {
-					simg += "<li style='width:" + tw + "px;height:" + tw + "px'><canvas id='can" + i + "'></canvas></li>";
-					var t = new Image;
-					t.index = i;
-					t.src = "img/" + i + ".jpg";
-					t.onload = function() {
-						var ogc = $("#can" + this.index)[0].getContext("2d");
-						ogc.drawImage(this, 0, 0, t.width, t.height);
-					}
-				}
-				$("#list").html(simg);
-				$("#list").on("tap", "li", function() {
-					$("#demo").show();
-					var index = $(this).index();
-					demoimg(index);
-				})
-				$("#demo").on("tap", function() {
-					$(this).hide();
-				})
+				var curindex = 0;
 
-				function demoimg(n) {
+				function ulimg() {
+					for(var i = 0; i < len; i++) {
+						simg +="<li style='width:"+tw+"px;height:"+tw+"px'><canvas id='can"+i+"'></canvas></li>";
+						var t = new Image;
+						t.index = i;
+						t.src = "img/" + i + ".jpg";
+						t.onload = function() {
+							var ogc = $("#can" + this.index)[0].getContext("2d");
+							ogc.drawImage(this, 0, 0, t.width, t.height);
+						}
+					}
+					$("#list").html(simg);
+					$("#list").on("tap", "li", function() {
+						$("#demo").show();
+						var index = $(this).index();
+						curindex=index;
+						demoimg(index);
+					})
+					$("#demo").on("tap", function() {
+						$("#imgs").attr("src","");
+						$(this).hide();
+					})
+					.on("swipeLeft", function(){
+						curindex++;
+						if(curindex >= len) {
+							curindex = len - 1;
+						}
+						demoimg(curindex, function() {
+							$("#imgs").addClass("animated bounceInRight")
+								.on("webkitAnimationEnd", function() {
+									$(this).removeClass().off("webkitAnimationEnd")
+								})
+							})
+						})	
+					.on("swipeRight", function() {
+						curindex--;
+						if(curindex <= 0) {
+							curindex = 0;
+						}
+						demoimg(curindex, function() {
+							$("#imgs").addClass("animated bounceInLeft")
+								.on("webkitAnimationEnd", function() {
+									$(this).removeClass().off("webkitAnimationEnd")
+								})
+							})
+						})
+					}
+					ulimg();
+
+					$(window).on("resize", function() {
+						ulimg();
+					})
+
+				function demoimg(n, callback) {
 					var t = new Image;
 					t.src = "img/" + n + ".large.jpg";
 					t.onload = function() {
@@ -86,26 +122,26 @@
 						var th = this.height;
 						var ww = $(window).width();
 						var wh = $(window).height();
-						var wsc=ww/tw;
-		   	     	   	var hsc=wh/th;
-						console.log(ww, wh, tw, th,wsc*th,hsc*tw);
-						if(tw > th){ //横板
+						var wsc = ww / tw;
+						var hsc = wh / th;
+						if(tw > th) { //横板
 							$("#imgs").css({
 								width: ww,
-								height: wsc*th,
-								marginLeft:0,
-								marginTop: (wh-wsc*th)/2+"px"
+								height: wsc * th,
+								marginLeft: 0,
+								marginTop: (wh - wsc * th) / 2 + "px"
 							})
-						} 
-						else if(th>tw){
+						} else if(th > tw) {
 							$("#imgs").css({
 								height: wh,
-								width: hsc*tw,
-								marginTop:0,
-								marginLeft:(ww-hsc*tw)/2+"px"
+								width: hsc * tw,
+								marginTop: 0,
+								marginLeft: (ww - hsc * tw) / 2 + "px"
 							})
 						}
-
+						if(callback) {
+							callback();
+						}
 					}
 				}
 			})
