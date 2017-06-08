@@ -85,7 +85,6 @@
 				$("#list").on("touchmove",function(ev){
 					st=$(this).scrollTop();
 					dir=ev.touches[0].pageY-sy;
-					console.log(st,listh,ulsh);
 					if(dir<0 && ulsh<=(st+listh)){
 						if(!flag){
 							tdiv=$("<div class='demo'>loading...</div>");
@@ -96,7 +95,7 @@
 				})
 				$("#list").on("touchend",function(ev){
 					$(".demo").remove();
-					if(dir<100 && ulsh<=(st+listh)){
+					if(dir<-100 && ulsh<=(st+listh)){
 						$.ajax({
 						url:"deom.json",
 						type:"get",
