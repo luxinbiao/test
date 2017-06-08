@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+		<script src="js/zepto.min.js"></script>
+		<style>
+			*{margin: 0;padding: 0;box-sizing: border-box;font-size: 14px;}
+			body,html{width: 100%;height: 100%;overflow: hidden;}
+			ul{list-style: none;}
+			.container{
+				display: -webkit-flex;
+				flex-direction: column;
+				width: 100%;
+				height: 100%;
+			}
+			header,footer{width: 100%;height: 45px;background: #ccc;}
+			section{flex: 1;background: #eee;overflow: auto;}
+			section ul{width: 100%;height: 100%;}
+			li{width: 100%;height: 30px;border-bottom: 1px solid #aaa;list-style: none;line-height: 30px;}
+			.demo{height: 50px;text-align: center;line-height: 50px;font-size: 18px;}
+			.demo:before{
+				content: "";
+				display: inline-block;
+				width: 20px;
+				height: 20px;
+				border-radius: 50%;
+				border-bottom: 1px solid #f0f;
+				border-top: none;
+				border-left: none;
+				-webkit-animation: abc 0.3s infinite;
+				margin-right: 10px;
+			}
+			@-webkit-keyframes abc{
+				from{
+					-webkit-transform: rotate(0deg);
+				}
+				to{
+					-webkit-transform: rotate(360deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<header>header</header>
+			<section class="list" id="list">
+				<ul id="uls">
+					<li>abc1</li>
+					<li>abc2</li>
+					<li>abc3</li>
+					<li>abc4</li>
+					<li>abc5</li>
+					<li>abc6</li>
+					<li>abc7</li>
+					<li>abc8</li>
+					<li>abc9</li>
+					<li>abc10</li>
+					<li>abc11</li>
+					<li>abc12</li>
+					<li>abc13</li>
+					<li>abc14</li>
+					<li>abc15</li>
+					<li>abc8</li>
+					<li>abc9</li>
+					<li>abc10</li>
+					<li>abc11</li>
+					<li>abc12</li>
+					<li>abc13</li>
+					<li>abc14</li>
+					<li>abc15</li>
+				</ul>
+			</section>
+			<footer>footer</footer>
+		</div>
+		<script>
+			$(function(){
+				var sy,st,dir,tdiv,flag=false,ulsh,listh;
+				$("#list").on("touchstart",function(ev){
+					sy=ev.touches[0].pageY;
+					ulsh=$("#uls").children().size()*$("#uls").children().height();
+					listh=$("#list").height();
+				})
+				$("#list").on("touchmove",function(ev){
+					st=$(this).scrollTop();
+					dir=ev.touches[0].pageY-sy;
+					console.log(st,listh,ulsh);
+					if(dir<0 && ulsh<=(st+listh)){
+						if(!flag){
+							tdiv=$("<div class='demo'>loading...</div>");
+							tdiv.appendTo($(this));
+							flag=true;
+						}
+					}
+				})
+				$("#list").on("touchend",function(ev){
+					$(".demo").remove();
+					if(dir<100 && ulsh<=(st+listh)){
+						$.ajax({
+						url:"deom.json",
+						type:"get",
+						dataType:'json',
+						success:function(data){
+							var arr=data.list;
+							var str="";
+							for(var i=0;i<arr.length;i++){
+								str+="<li>"+arr[i].title+"</li>";
+							}
+							var html=$("#list ul").html();
+							html=html+str;
+							$("#list ul").html(html);
+						}
+					})
+					}
+					flag=false;
+				})
+			})
+		</script>
+	</body>
+</html>
