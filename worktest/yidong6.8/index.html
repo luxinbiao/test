@@ -62,6 +62,14 @@
 					<li>abc13</li>
 					<li>abc14</li>
 					<li>abc15</li>
+					<li>abc8</li>
+					<li>abc9</li>
+					<li>abc10</li>
+					<li>abc11</li>
+					<li>abc12</li>
+					<li>abc13</li>
+					<li>abc14</li>
+					<li>abc15</li>
 				</ul>
 			</section>
 			<footer>footer</footer>
@@ -85,7 +93,7 @@
 				})
 				$("#list").on("touchend",function(ev){
 					$(".demo").remove();
-					if(dir>100 && st==0){
+					if(dir>150 && st==0){
 						$.ajax({
 						url:"deom.json",
 						type:"get",
