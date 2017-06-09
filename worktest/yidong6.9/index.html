@@ -92,7 +92,7 @@
 		<script>
 			$(function(){
 				var urldz="http://proxy.e12e.com/?http://www.webxml.com.cn/WebServices/TrainTimeWebService.asmx/getStationAndTimeByStationName?UserID=c9be12eed179416a9b895884ba1d0f49";
-				var s,e,code,sf,zd,sftime,zdtime,zhsj,zjl;
+				var s,e,code,sf,zd,sftime,zdtime,zhsj,zjl,daoda;
 				$("#load").hide();
 				$("#btn").on("tap",function(){
 					if(s!="" && e!=""){
@@ -105,15 +105,17 @@
 						console.log(data);
 						var str="";
 						$(data).find("TimeTable").each(function(index,obj){
-							if(index>10) return;
-							code=$(obj).find("TrainCode").text();
-							sf=$(obj).find("FirstStation").text();
-							zd=$(obj).find("LastStation").text();
-							sftime=$(obj).find("StartTime").text();
-							zdtime=$(obj).find("ArriveTime").text();
-							zhsj=$(obj).find("UseDate").text();
-							zjl=$(obj).find("KM").text();
-							str+="<li><h4><span>"+(index+1)+". </span><span>车次："+code+"</span>&nbsp&nbsp<span>"+(sf+'<=>'+zd)+"</span></h4>";
+							if(index>9) return;
+							code=$(obj).find("TrainCode").text();  //车次
+							sf=$(obj).find("FirstStation").text();  //始发站
+							chufa=$(obj).find("StartStation").text();  //查询出发车站
+							daoda=$(obj).find("ArriveStation").text();  //查询到达车站
+							zd=$(obj).find("LastStation").text();      //终点站
+							sftime=$(obj).find("StartTime").text();   //发车时间
+							zdtime=$(obj).find("ArriveTime").text();  //到达时间
+							zhsj=$(obj).find("UseDate").text();    //总耗时
+							zjl=$(obj).find("KM").text();          //总距离
+							str+="<li><h4><span>"+(index+1)+". </span><span>车次："+code+"</span>&nbsp&nbsp<span>"+(chufa+'=>'+daoda)+"</span></h4>";
 							str+="<p><span>发车时间："+sftime+"<span></br><span>到达时间: "+zdtime+"</span></p>";
 							str+="<p><span>总耗时："+zhsj+"</span></br><span>总距离: "+zjl+"KM</span></p></li></br>";
 						})
