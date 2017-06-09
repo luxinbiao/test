@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+		<script src="js/jquery-3.2.1.js"></script>
+		<script src="js/zepto.min.js"></script>
+		<style>
+			*{margin: 0;padding: 0;}
+			html,body{
+				width: 100%;
+				height: 100%;
+				font-size: 14px;
+				overflow: hidden;
+			}
+			.container{
+				width: 100%;
+				height: 100%;
+				display: -webkit-flex;
+				-webkit-flex-direction: column;
+			}
+			header{
+				width: 100%;
+				border-bottom: 1px solid #ccc;
+				margin-bottom: 10px;
+			}
+			section{
+				flex: 1;
+				overflow: auto;
+				display: -webkit-flex;
+				width: 200%;
+				transition: transform 0.6s;
+			}
+			section ul{
+				flex: 1;
+			}
+			header h3{
+				width: 100%;
+				text-align: center;
+				margin-top:10px;
+				font-size: 18px;
+			}
+			header>p{
+				width: 100%;
+				margin:8px auto;
+				text-align: center;
+			}
+			header>p input{
+				width: 200px;
+				height: 24px;
+			}
+			header>p #btn{
+				width: 80px;
+				height: 26px;
+			}
+			ul,li{list-style: none;}
+			ul li{
+				padding-left: 20px;
+			}
+			#list li p{
+				line-height: 24px;
+			}
+			footer{
+				width: 100%;
+				height: 40px;
+				line-height: 40px;
+				font-size: 16px;
+				text-align: center;
+				background: #ccc;
+			}
+			#load{
+				display: block;
+				width: 30px;
+				height: 30px;
+				margin:10px auto;
+				border-radius: 50%;
+				border-bottom:2px solid #00FFFF;
+				border-top: none;
+				border-left: none;
+				-webkit-animation:load 0.5s infinite linear;
+			}
+			@-webkit-keyframes load{
+				0%{
+					-webkit-transform: rotate(0deg);
+				}
+				100%{
+					-webkit-transform: rotate(360deg);
+				}
+			}
+		</style>
+		<script>
+			$(function(){
+				var urldz="http://proxy.e12e.com/?http://www.webxml.com.cn/WebServices/TrainTimeWebService.asmx/getStationAndTimeByStationName?UserID=c9be12eed179416a9b895884ba1d0f49";
+				var s,e,code,sf,zd,sftime,zdtime,zhsj,zjl;
+				$("#load").hide();
+				$("#btn").on("tap",function(){
+					if(s!="" && e!=""){
+						$("#list").children().remove();
+					}
+					$("#load").show();
+					s=$("#st").val();
+					e=$("#at").val();
+					$.get(urldz,{StartStation:s,ArriveStation:e},function(data){
+						console.log(data);
+						var str="";
+						$(data).find("TimeTable").each(function(index,obj){
+							if(index>10) return;
+							code=$(obj).find("TrainCode").text();
+							sf=$(obj).find("FirstStation").text();
+							zd=$(obj).find("LastStation").text();
+							sftime=$(obj).find("StartTime").text();
+							zdtime=$(obj).find("ArriveTime").text();
+							zhsj=$(obj).find("UseDate").text();
+							zjl=$(obj).find("KM").text();
+							str+="<li><h4><span>"+(index+1)+". </span><span>车次："+code+"</span>&nbsp&nbsp<span>"+(sf+'<=>'+zd)+"</span></h4>";
+							str+="<p><span>发车时间："+sftime+"<span></br><span>到达时间: "+zdtime+"</span></p>";
+							str+="<p><span>总耗时："+zhsj+"</span></br><span>总距离: "+zjl+"KM</span></p></li></br>";
+						})
+						$("#load").hide();
+						$("#list").html(str);
+					})
+				})
+				$("#list").on("tap","li",function(){
+					$("section").css({"-webkit-transform":"translate3d(-50%,0,0)"});
+					$("#last").find("li").html(code);
+				})
+				$("#last").on("tap",function(){
+					$("section").css({"-webkit-transform":"translate3d(0,0,0)"});
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<h3>火车时刻表</h3>
+				<p>起点站：<input type="text" id="st"/></p>
+				<p>终点站：<input type="text" id="at"/></p>
+				<p><input type="button" value="查询" id="btn"/></p>
+			</header>
+			<i id="load"></i>
+			<section>
+				<ul id="list">
+					
+				</ul>
+				<ul id="last">
+					<li></li>
+				</ul>
+			</section>
+			<footer>
+				<small> 2017 copyright&right;hc company</small>
+			</footer>
+		</div>
+		
+	</body>
+</html>
