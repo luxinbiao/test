@@ -17,6 +17,7 @@
 			.container{
 				width: 100%;
 				height: 100%;
+				position: relative;
 				display: -webkit-flex;
 				-webkit-flex-direction: column;
 			}
@@ -58,8 +59,17 @@
 			ul li{
 				padding-left: 20px;
 			}
-			#list li p{
+			ul li p{
 				line-height: 24px;
+				margin-left: 12px;
+			}
+			ul li h4{
+				font-size: 18px;
+			}
+			#last li{
+				margin:10px 0;
+				padding-bottom: 10px;
+				border-bottom: 1px solid #ccc;
 			}
 			footer{
 				width: 100%;
@@ -71,9 +81,12 @@
 			}
 			#load{
 				display: block;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				-webkit-transform: translate(-50%,-50%);
 				width: 30px;
 				height: 30px;
-				margin:10px auto;
 				border-radius: 50%;
 				border-bottom:2px solid #00FFFF;
 				border-top: none;
@@ -92,7 +105,8 @@
 		<script>
 			$(function(){
 				var urldz="http://proxy.e12e.com/?http://www.webxml.com.cn/WebServices/TrainTimeWebService.asmx/getStationAndTimeByStationName?UserID=c9be12eed179416a9b895884ba1d0f49";
-				var s,e,code,sf,zd,sftime,zdtime,zhsj,zjl,daoda;
+				var urllt="http://proxy.e12e.com/?http://www.webxml.com.cn//WebServices/TrainTimeWebService.asmx/getDetailInfoByTrainCode?UserID=c9be12eed179416a9b895884ba1d0f49";
+				var s,e,code;
 				$("#load").hide();
 				$("#btn").on("tap",function(){
 					if(s!="" && e!=""){
@@ -102,20 +116,19 @@
 					s=$("#st").val();
 					e=$("#at").val();
 					$.get(urldz,{StartStation:s,ArriveStation:e},function(data){
-						console.log(data);
 						var str="";
 						$(data).find("TimeTable").each(function(index,obj){
 							if(index>9) return;
 							code=$(obj).find("TrainCode").text();  //车次
-							sf=$(obj).find("FirstStation").text();  //始发站
-							chufa=$(obj).find("StartStation").text();  //查询出发车站
-							daoda=$(obj).find("ArriveStation").text();  //查询到达车站
-							zd=$(obj).find("LastStation").text();      //终点站
-							sftime=$(obj).find("StartTime").text();   //发车时间
-							zdtime=$(obj).find("ArriveTime").text();  //到达时间
-							zhsj=$(obj).find("UseDate").text();    //总耗时
-							zjl=$(obj).find("KM").text();          //总距离
-							str+="<li><h4><span>"+(index+1)+". </span><span>车次："+code+"</span>&nbsp&nbsp<span>"+(chufa+'=>'+daoda)+"</span></h4>";
+							var sf=$(obj).find("FirstStation").text();  //始发站
+							var chufa=$(obj).find("StartStation").text();  //查询出发车站
+							var daoda=$(obj).find("ArriveStation").text();  //查询到达车站
+							var zd=$(obj).find("LastStation").text();      //终点站
+							var sftime=$(obj).find("StartTime").text();   //发车时间
+							var zdtime=$(obj).find("ArriveTime").text();  //到达时间
+							var zhsj=$(obj).find("UseDate").text();    //总耗时
+							var zjl=$(obj).find("KM").text();          //总距离
+							str+="<li><h4><span>"+(index+1)+". </span><span>车次：<i id='num'>"+code+"</i></span>&nbsp&nbsp<span>"+(chufa+'=>'+daoda)+"</span></h4>";
 							str+="<p><span>发车时间："+sftime+"<span></br><span>到达时间: "+zdtime+"</span></p>";
 							str+="<p><span>总耗时："+zhsj+"</span></br><span>总距离: "+zjl+"KM</span></p></li></br>";
 						})
@@ -124,8 +137,26 @@
 					})
 				})
 				$("#list").on("tap","li",function(){
+					$("#last").children().remove();
+					code=$(this).find("#num").text();
+					$("#load").show();
 					$("section").css({"-webkit-transform":"translate3d(-50%,0,0)"});
-					$("#last").find("li").html(code);
+					var str="";
+					$.get(urllt,{TrainCode:code},function(data){
+						$(data).find("TrainDetailInfo").each(function(index,obj){
+							var tjzt=$(obj).find("TrainStation").text(); //途经车站
+							var ddtime=$(obj).find("ArriveTime").text(); //到达时间
+							var fctime=$(obj).find("StartTime").text(); //发车时间
+							var km=$(obj).find("KM").text();  //行驶距离
+							str+="<li><h4>"+(index+1)+". 车站："+tjzt+"</h4><p><span id='one'>到达时间："+ddtime+"</span></p>";
+							str+="<p><span id='two'>发车时间："+fctime+"</span></p><p><span>行驶路程："+km+" KM</span></p></li>";
+						})
+						$("#load").hide();
+						$("#last").html(str);
+						$("#last li:eq(0)").find("#one").remove();
+						$("#last li:last").find("#two").remove();
+					})
+					
 				})
 				$("#last").on("tap",function(){
 					$("section").css({"-webkit-transform":"translate3d(0,0,0)"});
@@ -144,16 +175,14 @@
 			<i id="load"></i>
 			<section>
 				<ul id="list">
-					
 				</ul>
 				<ul id="last">
-					<li></li>
 				</ul>
 			</section>
 			<footer>
 				<small> 2017 copyright&right;hc company</small>
 			</footer>
-		</div>
+		</div>.
 		
 	</body>
 </html>
