@@ -11,7 +11,7 @@ $(function() {
 	function gettext() {
 		var ur = "http://m.neihanshequ.com/?skip_guidence=1&is_json=1&app_name=neihanshequ_web&min_time=&csrfmiddlewaretoken=247453b2cb224957ea640466766003b8";
 		var arr = [];
-		var str = "",dir;
+		var str = "";
 		$.ajax({
 			type: "get",
 			url: ur,
