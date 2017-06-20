@@ -1,7 +1,7 @@
 document.documentElement.style.fontSize = innerWidth / 16 + "px";
 $(function(){
 	function getimg(){
-		var ur="http://m.neihanshequ.com/pic/?skip_guidence=1is_json=1&app_name=neihanshequ_web&min_time=1497578838&csrfmiddlewaretoken=247453b2cb224957ea640466766003b8";
+		var ur="http://m.neihanshequ.com/pic/?skip_guidence=1&is_json=1&app_name=neihanshequ_web&min_time=1497578838&csrfmiddlewaretoken=247453b2cb224957ea640466766003b8";
 		var arr = [];
 		var str = "",dir;
 		divr = "<div class='load'><span></span></div>";
