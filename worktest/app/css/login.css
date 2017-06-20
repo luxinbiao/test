@@ -18,9 +18,9 @@ a { text-decoration: none; -webkit-tap-highlight-color: transparent; color: #ede
 .cantainer header div a { display: block; width: 100%; height: 100%; background: url(../img/left.png) no-repeat; background-size: 100% 100%; }
 .cantainer header span { color: #FFF; }
 .cantainer section { width: 100%; }
-.cantainer section .logo { display: block; width: 100%; height: 7.5rem; padding-top: 2rem; position: relative; }
-.cantainer section .logo p { position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); width: 5.5rem; height: 5.5rem; border-radius: 50%; background: url(../img/532efe257e175.jpg) no-repeat; background-size: 200% 200%; background-position: center top; }
-.cantainer section form { width: 100%; display: block; overflow: hidden; padding: 0.5rem 1rem; }
+.cantainer section .logo { display: block; width: 100%; height: 7rem; padding-top: 0.7rem; position: relative; }
+.cantainer section .logo p { position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); width: 5rem; height: 5rem; border-radius: 50%; background: url(../img/532efe257e175.jpg) no-repeat; background-size: 200% 200%; background-position: center top; }
+.cantainer section form { width: 100%; display: block; overflow: hidden; padding: 0.3rem 1rem; }
 .cantainer section form div { width: 100%; height: 2rem; margin-bottom: 1rem; background: #fff; border: 0.05rem solid #EDEDED; border-radius: 0.3rem; overflow: hidden; }
 .cantainer section form div span { display: block; float: left; width: 2rem; height: 2rem; padding: 0.25rem; background: #F9F9F9; border-right: 0.05rem solid #EDEDED; }
 .cantainer section form div span i { width: 1.5rem; height: 1.5rem; display: block; }
@@ -30,8 +30,8 @@ a { text-decoration: none; -webkit-tap-highlight-color: transparent; color: #ede
 .cantainer section form div.tijiao { background: none; border: none; display: -webkit-flex; border-radius: 0; }
 .cantainer section form div.tijiao > input { flex: 1; height: 1.8rem; line-height: 1.8rem; margin-top: 0; border-radius: 0.2rem; background: orange; color: #FFF; }
 .cantainer section form div.tijiao > input:nth-of-type(1) { margin-left: 0; }
-.cantainer section .catenate { width: 100%; height: 2.5rem; text-align: center; }
-.cantainer section .catenate span { display: inline-block; width: 2rem; height: 2rem; margin: 0.5rem; border-radius: 50%; }
+.cantainer section .catenate { width: 100%; height: 2.2rem; text-align: center; }
+.cantainer section .catenate span { display: inline-block; width: 2rem; height: 2rem; margin: 0 0.5rem; border-radius: 50%; }
 .cantainer section .catenate span:nth-of-type(1) { background: url(../img/weibo.png) no-repeat; background-size: 100% 100%; }
 .cantainer section .catenate span:nth-of-type(2) { background: url(../img/weixin.png) no-repeat; background-size: 100% 100%; }
 .cantainer section .catenate span:nth-of-type(3) { background: url(../img/qq.png) no-repeat; background-size: 100% 100%; }
