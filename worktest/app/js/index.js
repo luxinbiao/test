@@ -11,7 +11,9 @@ $(function() {
 	function gettext() {
 		var ur = "http://m.neihanshequ.com/?skip_guidence=1&is_json=1&app_name=neihanshequ_web&min_time=&csrfmiddlewaretoken=247453b2cb224957ea640466766003b8";
 		var arr = [];
-		var str = "";
+		var str = "",dir;
+		divr = "<div class='load'><span></span></div>";
+		$(".list").append(divr);
 		$.ajax({
 			type: "get",
 			url: ur,
@@ -25,6 +27,7 @@ $(function() {
 					str += "<div class='foot'><div class='zan'><span></span><i>" + 50 * (i + 1) + "</i></div><div class='cai'><span></span><i>" + 20 * (i + 1) + "</i></div>";
 					str += "<div class='pinlun'><span></span><i>" + 5 * (i + 1) + "</i></div><div class='zhuanzai'><span></span><i>" + 10 * (i + 1) + "</i></div></div></li>";
 				}
+				$(".load").remove();
 				$(".listtxt").html(str);
 			}
 		})
