@@ -1,0 +1,67 @@
+@charset "UTF-8";
+*, ::before, ::after { padding: 0; margin: 0; font-size: 1rem; font-weight: 400; }
+
+* { box-sizing: border-box; -webkit-box-sizing: border-box; }
+
+html, body { width: 100%; height: 100%; overflow: hidden; }
+
+body { -webkit-user-select: none; -webkit-text-size-adjust: 100%; background: #F9F9F9; color: #1a1a1a; }
+
+ul, ol, li { list-style: none; }
+
+input, button, i { -webkit-appearance: none; }
+
+a { text-decoration: none; -webkit-tap-highlight-color: transparent; color: #ededed; }
+
+.cantainer { width: 100%; height: 100%; display: -webkit-flex; -webkit-flex-direction: column; }
+.cantainer #show { width: 6rem; height: 6rem; position: fixed; border-radius: 0.3rem; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(22, 22, 22, 0.6); text-align: center; line-height: 6rem; z-index: 30; display: none; color: #FFF; }
+.cantainer header { width: 100%; height: 2rem; background: orange; padding: 0.25rem 0.6rem; text-align: center; z-index: 10; }
+.cantainer header .logo { display: inline-block; float: left; height: 1.5rem; width: 1.5rem; border-radius: 50%; background: url("../img/logo.png") no-repeat; background-size: 100% 100%; background-position: center top; }
+.cantainer header span { text-align: center; line-height: 1.5rem; font-family: "楷体"; color: #FF9; font-size: 1rem; }
+.cantainer header .login { display: inline-block; float: right; }
+.cantainer header .login a { display: block; border-radius: 50%; height: 1.2rem; width: 1.2rem; background: url("../img/login.png") no-repeat; background-size: 100% 100%; margin-top: 0.2rem; }
+.cantainer .nav { position: fixed; top: 2rem; width: 100%; height: 1.5rem; display: -webkit-flex; z-index: 9; }
+.cantainer .nav a { flex: 1; text-align: center; line-height: 1.5rem; font-size: 0.7rem; background: rgba(20, 20, 20, 0.5); }
+.cantainer .nav a.bac { background: rgba(20, 20, 20, 0.8); }
+.cantainer section { flex: 1; padding-top: 1.5rem; padding-bottom: 0.5rem; overflow-y: auto; }
+.cantainer section .listtxt, .cantainer section .listimg, .cantainer section .listvideo { width: 100%; padding: 0 0.5rem; }
+.cantainer section .listtxt li, .cantainer section .listimg li, .cantainer section .listvideo li { width: 100%; margin-top: 0.5rem; padding: 0.5rem; overflow: hidden; height: auto; display: block; border-radius: 0.5rem; border: 0.05rem solid #EDEDED; background: #EDEDED; }
+.cantainer section .listtxt li .uesrname, .cantainer section .listimg li .uesrname, .cantainer section .listvideo li .uesrname { width: 100%; height: 1.2rem; padding: 0.1rem 0; }
+.cantainer section .listtxt li .uesrname img, .cantainer section .listimg li .uesrname img, .cantainer section .listvideo li .uesrname img { margin-right: 0.5rem; display: inline-block; width: 1rem; height: 1rem; border-radius: 50%; }
+.cantainer section .listtxt li .uesrname span, .cantainer section .listimg li .uesrname span, .cantainer section .listvideo li .uesrname span { font-size: 0.6rem; color: #aaa; line-height: 1rem; position: relative; top: -0.25rem; }
+.cantainer section .listtxt li .text, .cantainer section .listimg li .text, .cantainer section .listvideo li .text { width: 100%; display: block; overflow: hidden; padding: 0.3rem 0; }
+.cantainer section .listtxt li .text p, .cantainer section .listimg li .text p, .cantainer section .listvideo li .text p { font-size: 0.7rem; }
+.cantainer section .listtxt li .tupian, .cantainer section .listtxt li .shiping, .cantainer section .listimg li .tupian, .cantainer section .listimg li .shiping, .cantainer section .listvideo li .tupian, .cantainer section .listvideo li .shiping { width: 100%; }
+.cantainer section .listtxt li .tupian img, .cantainer section .listtxt li .shiping img, .cantainer section .listimg li .tupian img, .cantainer section .listimg li .shiping img, .cantainer section .listvideo li .tupian img, .cantainer section .listvideo li .shiping img { width: 100%; height: auto; }
+.cantainer section .listtxt li .shiping, .cantainer section .listimg li .shiping, .cantainer section .listvideo li .shiping { height: auto; position: relative; }
+.cantainer section .listtxt li .shiping span, .cantainer section .listimg li .shiping span, .cantainer section .listvideo li .shiping span { position: absolute; display: block; width: 2.5rem; height: 2.5rem; border-radius: 50%; top: 50%; left: 50%; transform: translate(-50%, -50%); -webkit-transform: translate(-50%, -50%); background: url("../img/jammy.png") no-repeat; background-size: 100% 100%; opacity: 0.7; }
+.cantainer section .listtxt li .foot, .cantainer section .listimg li .foot, .cantainer section .listvideo li .foot { width: 100%; height: 1.2rem; display: -webkit-flex; }
+.cantainer section .listtxt li .foot div, .cantainer section .listimg li .foot div, .cantainer section .listvideo li .foot div { flex: 1; line-height: 0.8rem; text-align: center; }
+.cantainer section .listtxt li .foot div span, .cantainer section .listimg li .foot div span, .cantainer section .listvideo li .foot div span { display: inline-block; width: 0.8rem; height: 0.8rem; position: relative; top: 0.2rem; opacity: 0.5; }
+.cantainer section .listtxt li .foot div i, .cantainer section .listimg li .foot div i, .cantainer section .listvideo li .foot div i { display: inline-block; margin-left: 0.2rem; line-height: 1rem; font-size: 0.6rem; color: #ccc; font-family: "微软雅黑"; font-style: normal; }
+.cantainer section .listtxt li .foot .zan span, .cantainer section .listimg li .foot .zan span, .cantainer section .listvideo li .foot .zan span { background: url("../img/zan1.png") no-repeat; background-size: 100% 100%; }
+.cantainer section .listtxt li .foot .zan span.backzan, .cantainer section .listimg li .foot .zan span.backzan, .cantainer section .listvideo li .foot .zan span.backzan { background: url("../img/zan2.png") no-repeat; background-size: 100% 100%; }
+.cantainer section .listtxt li .foot .cai span, .cantainer section .listimg li .foot .cai span, .cantainer section .listvideo li .foot .cai span { background: url("../img/cai1.png") no-repeat; background-size: 100% 100%; }
+.cantainer section .listtxt li .foot .cai span.backcai, .cantainer section .listimg li .foot .cai span.backcai, .cantainer section .listvideo li .foot .cai span.backcai { background: url("../img/cai2.png") no-repeat; background-size: 100% 100%; }
+.cantainer section .listtxt li .foot .pinlun span, .cantainer section .listimg li .foot .pinlun span, .cantainer section .listvideo li .foot .pinlun span { background: url("../img/pinlun.png") no-repeat; background-size: 100% 100%; }
+.cantainer section .listtxt li .foot .zhuanzai span, .cantainer section .listimg li .foot .zhuanzai span, .cantainer section .listvideo li .foot .zhuanzai span { background: url("../img/zhuanfa.png") no-repeat; background-size: 100% 100%; }
+.cantainer section .load { width: 100%; height: 2rem; text-align: center; padding: 0.25rem; }
+.cantainer section .load span { display: inline-block; width: 1.5rem; height: 1.5rem; background: url("../img/load.png") no-repeat; background-size: 100% 100%; -webkit-animation: run 0.6s infinite linear; }
+.cantainer .gotop { width: 1.5rem; height: 1.5rem; position: fixed; bottom: 1.2rem; right: -1.8rem; background: url("../img/gotop.png") no-repeat; background-size: 100% 100%; opacity: 0.6; }
+.cantainer .yiny { width: 100%; height: 100%; position: fixed; display: none; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.3); z-index: 40; }
+.cantainer .yiny .share { position: absolute; bottom: -9rem; width: 100%; z-index: 40; height: 9rem; background: #fff; border-top: 0.05rem solid #ececec; }
+.cantainer .yiny .share h4, .cantainer .yiny .share h5 { width: 100%; text-align: center; height: 1.5rem; line-height: 1.5rem; font-size: 0.9rem; color: #777; }
+.cantainer .yiny .share h5 { border-top: 0.05rem solid #ccc; padding-top: 0.25rem; margin-top: 1rem; }
+.cantainer .yiny .share .catenate { width: 100%; padding: 1rem 2rem; text-align: center; height: 4rem; }
+.cantainer .yiny .share .catenate span { width: 2rem; height: 2rem; display: inline-block; border-radius: 50%; margin: 0 0.5rem; }
+.cantainer .yiny .share .catenate span.weibo { background: url("../img/weibo.png") no-repeat; background-size: 100% 100%; }
+.cantainer .yiny .share .catenate span.weixin { background: url("../img/weixin.png") no-repeat; background-size: 100% 100%; }
+.cantainer .yiny .share .catenate span.qq { background: url("../img/qq.png") no-repeat; background-size: 100% 100%; }
+.cantainer .shenp { width: 100%; height: 2.5rem; padding: 0.5rem 1.5rem; position: fixed; background-color: orange; bottom: -2.5rem; left: 0; line-height: 2.5rem; }
+.cantainer .shenp > div { width: 100%; height: 1.5rem; line-height: 1.5rem; display: block; background: #FFF; padding-left: 0.3rem; border-radius: 0.2rem; }
+.cantainer .shenp > div input { width: 100%; outline: none; border: none; font-size: 0.7rem; margin-bottom: 0.3rem; }
+
+@-webkit-keyframes run { form { -webkit-transform: rotate(0deg); }
+  to { -webkit-transform: rotate(360deg); } }
+
+/*# sourceMappingURL=headerfooter.css.map */

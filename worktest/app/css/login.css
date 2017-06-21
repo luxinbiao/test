@@ -1,0 +1,41 @@
+*, ::before, ::after { padding: 0; margin: 0; font-size: 1rem; font-weight: 400; }
+
+* { box-sizing: border-box; -webkit-box-sizing: border-box; }
+
+html, body { width: 100%; height: 100%; overflow: hidden; }
+
+body { -webkit-user-select: none; -webkit-text-size-adjust: 100%; background: #F9F9F9; color: #1a1a1a; position: relative; }
+
+ul, ol, li { list-style: none; }
+
+input, button, i { -webkit-appearance: none; }
+
+a { text-decoration: none; -webkit-tap-highlight-color: transparent; color: #ededed; }
+
+#login, #Register { position: absolute; width: 100%; height: 100%; left: 0; top: 0; }
+#login header, #Register header { width: 100%; height: 2rem; background: orange; padding: 0.4rem 0.6rem; text-align: center; }
+#login header div, #Register header div { float: left; width: 1.2rem; height: 1.2rem; }
+#login header div a, #Register header div a { display: block; width: 100%; height: 100%; background: url(../img/left.png) no-repeat; background-size: 100% 100%; }
+#login header span, #Register header span { color: #FFF; }
+#login section, #Register section { width: 100%; }
+#login section .logo, #Register section .logo { display: block; width: 100%; height: 7rem; padding-top: 0.7rem; position: relative; }
+#login section .logo p, #Register section .logo p { position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); width: 5rem; height: 5rem; border-radius: 50%; background: url(../img/logo.png) no-repeat; background-size: 100% 100%; background-position: center top; }
+#login section .form, #Register section .form { width: 100%; display: block; overflow: hidden; padding: 0.3rem 1rem; }
+#login section .form div, #Register section .form div { width: 100%; height: 2rem; margin-bottom: 1rem; background: #fff; border: 0.05rem solid #EDEDED; border-radius: 0.3rem; overflow: hidden; }
+#login section .form div span, #Register section .form div span { display: block; float: left; width: 2rem; height: 2rem; padding: 0.25rem; background: #F9F9F9; border-right: 0.05rem solid #EDEDED; }
+#login section .form div span i, #Register section .form div span i { width: 1.5rem; height: 1.5rem; display: block; }
+#login section .form div span i.nameimg, #Register section .form div span i.nameimg { background: url(../img/name.png) no-repeat; background-size: 100% 100%; }
+#login section .form div span i.passimg, #Register section .form div span i.passimg { background: url(../img/pass.png) no-repeat; background-size: 100% 100%; }
+#login section .form div > input, #Register section .form div > input { width: 10rem; float: left; height: 1.3rem; margin-top: 0.35rem; outline: none; border: none; margin-left: 0.5rem; font-size: 0.7rem; }
+#login section .form div.tijiao, #Register section .form div.tijiao { background: none; border: none; display: -webkit-flex; border-radius: 0; }
+#login section .form div.tijiao > input, #Register section .form div.tijiao > input { flex: 1; height: 1.8rem; line-height: 1.8rem; margin-top: 0; border-radius: 0.2rem; background: orange; color: #FFF; }
+#login section .form div.tijiao > input:nth-of-type(1), #Register section .form div.tijiao > input:nth-of-type(1) { margin-left: 0; }
+#login section .catenate, #Register section .catenate { width: 100%; height: 2.2rem; text-align: center; }
+#login section .catenate span, #Register section .catenate span { display: inline-block; width: 2rem; height: 2rem; margin: 0 0.5rem; border-radius: 50%; }
+#login section .catenate span:nth-of-type(1), #Register section .catenate span:nth-of-type(1) { background: url(../img/weibo.png) no-repeat; background-size: 100% 100%; }
+#login section .catenate span:nth-of-type(2), #Register section .catenate span:nth-of-type(2) { background: url(../img/weixin.png) no-repeat; background-size: 100% 100%; }
+#login section .catenate span:nth-of-type(3), #Register section .catenate span:nth-of-type(3) { background: url(../img/qq.png) no-repeat; background-size: 100% 100%; }
+
+#Register { display: none; }
+
+/*# sourceMappingURL=login.css.map */
