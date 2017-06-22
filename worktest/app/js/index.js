@@ -52,7 +52,7 @@ $(function() {
 			dir = ev.touches[0].pageY - sy;
 //			console.log(st, listh, ulsh);
 			if(dir < -200 && ulsh <= (st + listh)) {
-				if(!flag) {
+				if(!flag && $(".load").length<0){
 					divr = "<div class='load'><span></span></div>";
 					$(".list").append(divr);
 					flag = true;
@@ -134,7 +134,7 @@ $(function() {
 			dir = ev.touches[0].pageY - sy;
 //			console.log(st, listh, ulsh);
 			if(dir < -200 && ulsh <= (st + listh)) {
-				if(!flag) {
+				if(!flag && $(".load").length<0) {
 					divr = "<div class='load'><span></span></div>";
 					$(".list").append(divr);
 					flag = true;
@@ -218,7 +218,7 @@ $(function() {
 			dir = ev.touches[0].pageY - sy;
 //			console.log(st, listh, ulsh);
 			if(dir < -200 && ulsh <= (st + listh)) {
-				if(!flag) {
+				if(!flag && $(".load").length<0) {
 					divr1 = "<div class='load'><span></span></div>";
 					$(".list").append(divr1);
 					flag = true;
