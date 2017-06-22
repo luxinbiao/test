@@ -10,17 +10,16 @@ document.documentElement.style.fontSize = innerWidth / 16 + "px";
 $(function() {
 	function gettext(){
 		var flag=false;
-		var str = "";
 		if($(".listtxt").html()==""){
 			if(!flag){
 				divr = "<div class='load'><span></span></div>";
-				$(".list").append(divr);
+				$(".list").prepend(divr);
 				flag = true;
 			}
 		}
 		var ur = "http://m.neihanshequ.com/?skip_guidence=1&is_json=1&app_name=neihanshequ_video&min_time=1497699938&csrfmiddlewaretoken=70faddc0d620ee6ba01b2e0627593360";
 		var arr = [];
-		
+		var str = "";
 		$.ajax({
 			type: "get",
 			url: ur,
@@ -92,17 +91,16 @@ $(function() {
 	}
 	function getvideo() {
 		var flag=false;
-		var str = "";
 		if($(".listtxt").html()==""){
 			if(!flag){
 				divr = "<div class='load'><span></span></div>";
-				$(".list").append(divr);
+				$(".list").prepend(divr);
 				flag = true;
 			}
 		}
 		var ur="http://m.neihanshequ.com/video/?skip_guidence=1&is_json=1&app_name=neihanshequ_web&min_time=1497584308&csrfmiddlewaretoken=247453b2cb224957ea640466766003b8";
 		var arr = [];
-		
+		var str = "";
 		$.ajax({
 			type: "get",
 			url: ur,
@@ -177,17 +175,16 @@ $(function() {
 	}
 	function getimg(){
 		var flag=false;
-		var str = "";
 		if($(".listtxt").html()==""){
 			if(!flag){
 				divr = "<div class='load'><span></span></div>";
-				$(".list").append(divr);
+				$(".list").prepend(divr);
 				flag = true;
 			}
 		}
 		var ur="http://m.neihanshequ.com/pic/?skip_guidence=1&is_json=1&app_name=neihanshequ_web&min_time=1497578838&csrfmiddlewaretoken=247453b2cb224957ea640466766003b8";
 		var arr = [];
-		
+		var str = "";
 		$.ajax({
 			type: "get",
 			url: ur,
