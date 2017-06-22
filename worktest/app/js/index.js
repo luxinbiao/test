@@ -14,7 +14,7 @@ $(function() {
 			if(!flg){
 				divr = "<div class='load'><span></span></div>";
 				$(".list").append(divr);
-				flag = true;
+				flg = true;
 			}
 		}
 		var ur = "http://m.neihanshequ.com/?skip_guidence=1&is_json=1&app_name=neihanshequ_video&min_time=1497699938&csrfmiddlewaretoken=70faddc0d620ee6ba01b2e0627593360";
@@ -35,7 +35,7 @@ $(function() {
 				}
 				$(".load").remove();
 				$(".listtxt").html(str);
-				flag=false;
+				flg=false;
 			}
 		})
 		var sy, dir, flag = false,
@@ -98,7 +98,7 @@ $(function() {
 			if(!flg){
 				divr = "<div class='load'><span></span></div>";
 				$(".list").append(divr);
-				flag = true;
+				flg = true;
 			}
 		}
 		var ur="http://m.neihanshequ.com/video/?skip_guidence=1&is_json=1&app_name=neihanshequ_web&min_time=1497584308&csrfmiddlewaretoken=247453b2cb224957ea640466766003b8";
@@ -120,7 +120,7 @@ $(function() {
 				}
 				$(".load").remove();
 				$(".listtxt").html(str);
-				flag=false;
+				flg=false;
 			}
 		})
 		var sy, dir, flag = false,
@@ -185,7 +185,7 @@ $(function() {
 			if(!flg){
 				divr = "<div class='load'><span></span></div>";
 				$(".list").append(divr);
-				flag = true;
+				flg = true;
 			}
 		}
 		var ur="http://m.neihanshequ.com/pic/?skip_guidence=1&is_json=1&app_name=neihanshequ_web&min_time=1497578838&csrfmiddlewaretoken=247453b2cb224957ea640466766003b8";
@@ -207,7 +207,7 @@ $(function() {
 				}
 				$(".load").remove();
 				$(".listtxt").html(str);
-				flag=false;
+				flg=false;
 			}
 		})
 		var sy, dir, flag = false,
