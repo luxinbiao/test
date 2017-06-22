@@ -278,6 +278,7 @@ $(function() {
 	$(".abtn").on("tap",function(){
 		$(this).addClass("bac").siblings().removeClass("bac");
 		$(".listtxt").html("");
+		$(".load").remove();
 		var index=$(this).index();
 		if(index==0){
 			gettext();
