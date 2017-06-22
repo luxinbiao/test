@@ -11,7 +11,7 @@ $(function() {
 	function gettext(){
 		var flag=false;
 		var str = "";
-		if(str=="" && $(".listtxt").html()==""){
+		if($(".listtxt").html()==""){
 			if(!flag){
 				divr = "<div class='load'><span></span></div>";
 				$(".list").append(divr);
@@ -52,7 +52,7 @@ $(function() {
 			st = $(this).scrollTop();
 			dir = ev.touches[0].pageY - sy;
 //			console.log(st, listh, ulsh);
-			if(dir < -200 && ulsh <= (st + listh) && str!="") {
+			if(dir < -200 && ulsh <= (st + listh)) {
 				if(!flag) {
 					divr = "<div class='load'><span></span></div>";
 					$(".list").append(divr);
@@ -93,7 +93,7 @@ $(function() {
 	function getvideo() {
 		var flag=false;
 		var str = "";
-		if(str=="" && $(".listtxt").html()==""){
+		if($(".listtxt").html()==""){
 			if(!flag){
 				divr = "<div class='load'><span></span></div>";
 				$(".list").append(divr);
@@ -135,7 +135,7 @@ $(function() {
 			st = $(this).scrollTop();
 			dir = ev.touches[0].pageY - sy;
 //			console.log(st, listh, ulsh);
-			if(dir < -200 && ulsh <= (st + listh) && str!="") {
+			if(dir < -200 && ulsh <= (st + listh)) {
 				if(!flag) {
 					divr = "<div class='load'><span></span></div>";
 					$(".list").append(divr);
@@ -178,7 +178,7 @@ $(function() {
 	function getimg(){
 		var flag=false;
 		var str = "";
-		if(str=="" && $(".listtxt").html()==""){
+		if($(".listtxt").html()==""){
 			if(!flag){
 				divr = "<div class='load'><span></span></div>";
 				$(".list").append(divr);
@@ -220,7 +220,7 @@ $(function() {
 			st = $(this).scrollTop();
 			dir = ev.touches[0].pageY - sy;
 //			console.log(st, listh, ulsh);
-			if(dir < -200 && ulsh <= (st + listh) && str!="") {
+			if(dir < -200 && ulsh <= (st + listh)) {
 				if(!flag) {
 					divr1 = "<div class='load'><span></span></div>";
 					$(".list").append(divr1);
