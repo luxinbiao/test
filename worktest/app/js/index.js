@@ -10,7 +10,7 @@ document.documentElement.style.fontSize = innerWidth / 16 + "px";
 $(function() {
 	function gettext(){
 		var flag=false;
-		if($(".listtxt").html()==""){
+		if(str==""){
 			if(!flag){
 				divr = "<div class='load'><span></span></div>";
 				$(".list").append(divr);
@@ -51,7 +51,7 @@ $(function() {
 			st = $(this).scrollTop();
 			dir = ev.touches[0].pageY - sy;
 //			console.log(st, listh, ulsh);
-			if(dir < -200 && ulsh <= (st + listh)) {
+			if(dir < -200 && ulsh <= (st + listh) && str!="") {
 				if(!flag) {
 					divr = "<div class='load'><span></span></div>";
 					$(".list").append(divr);
@@ -91,7 +91,7 @@ $(function() {
 	}
 	function getvideo() {
 		var flag=false;
-		if($(".listtxt").html()==""){
+		if(str==""){
 			if(!flag){
 				divr = "<div class='load'><span></span></div>";
 				$(".list").append(divr);
@@ -133,7 +133,7 @@ $(function() {
 			st = $(this).scrollTop();
 			dir = ev.touches[0].pageY - sy;
 //			console.log(st, listh, ulsh);
-			if(dir < -200 && ulsh <= (st + listh)) {
+			if(dir < -200 && ulsh <= (st + listh) && str!="") {
 				if(!flag) {
 					divr = "<div class='load'><span></span></div>";
 					$(".list").append(divr);
@@ -175,7 +175,7 @@ $(function() {
 	}
 	function getimg(){
 		var flag=false;
-		if($(".listtxt").html()==""){
+		if(str==""){
 			if(!flag){
 				divr = "<div class='load'><span></span></div>";
 				$(".list").append(divr);
@@ -232,7 +232,7 @@ $(function() {
 			}
 		})
 		$(".list").on("touchend",function(ev){
-			if(dir < -200 && ulsh <= (st + listh)) {
+			if(dir < -200 && ulsh <= (st + listh) && str!="") {
 				$.ajax({
 					type: "get",
 					url: ur,
