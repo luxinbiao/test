@@ -204,7 +204,7 @@
 				<li id="name"><span class="myproblem text">昵称</span><span class="fl_rt notice">胡萝卜</span></li>
 				<li id="sex"><span class="survey text">性别</span><span class="fl_rt notice">女</span></li>
 				<li id="theclass"><span class="phone text">班级</span><span class="fl_rt" style="margin-top: 0.15rem;">2017职业全能班32期</span></li>
-				<li><input id="takepicture" type="file" accept="image/*" multiple>拍照</li>
+				<li><input type='file' id="imgInp" /><img id="blah" src="#" alt="显示您上传的商品图片" /></li>
 			</ul>
 			<div class="model">
 				<div class="maskmodel">
@@ -217,36 +217,19 @@
 			</div>
 		</section>
 		<script>
-			var takePictureOnclick = function() {
-				var takePicture = document.getElementById('takepicture');
-				// 添加需要处理的代码
-				takePicture.click();
+			function readURL(input) {
+			   if (input.files && input.files[0]) {
+			       var reader = new FileReader();
+			       reader.onload = function (e) {
+			           $('#blah').attr('src', e.target.result);
+			       }
+			       reader.readAsDataURL(input.files[0]);
+			   }
 			}
-			var takePicture = document.getElementById('takepicture');
-			var takePictureUrl = function() {
-				takePicture.onchange = function(event) {
-					var files = event.target.files,
-						file;
-					if(files && files.length > 0) {
-						file = files[0];
-						try {
-							var URL = window.URL || window.webkitURL;
-							var blob = URL.createObjectURL(file);　　 // 获取照片的文件流
-							compressPicture(blob);　　 // 压缩照片
-						} catch(e) {
-							try {
-								var fileReader = new FileReader();
-								fileReader.onload = function(event) {　　　　 // 获取照片的base64编码
-									compressPicture(event.target.result);　　 // 压缩照片
-								};
-								fileReader.readAsDataURL(file);
-							} catch(e) {
-								alert(common.MESSAGE.title.error, '拍照失败,请联系客服或尝试更换手机再试!');
-							}
-						}
-					}
-				}
-			}();
+			$("#imgInp").change(function(){
+			   readURL(this);
+			});
+			
 		</script>
 	</body>
 
