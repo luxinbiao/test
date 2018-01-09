@@ -1,217 +1,253 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
-		<meta charset="UTF-8">
-		<title></title>
-		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
-		<link rel="stylesheet" href="bs/css/bootstrap.css" />
-		<script src="js/iscroll5.js"></script>
-		<style>
-			*{
-				margin:0;padding:0;
-				box-sizing:border-box;
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="utf-8" />
+		<title>个人中心</title>
+		<link rel="Shortcut Icon" href="https://res.wx.qq.com/mpres/htmledition/images/favicon3a7b38.ico" />
+		<script>
+			if(document.documentElement.clientWidth < 768) {
+				document.documentElement.style.fontSize = document.documentElement.clientWidth / 375 * 16 + 'px';
+			} else {
+				document.documentElement.style.fontSize = document.documentElement.clientWidth / 375 * 8 + 'px';
 			}
-			ul{
+		</script>
+		<script type="text/javascript" src='http://res.wx.qq.com/open/js/jweixin-1.2.0.js'></script>
+		<style>
+			*,
+			::before,
+			::after {
+				padding: 0;
+				margin: 0;
+			}
+			
+			html,
+			body {
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+				font-family: "微软雅黑";
+			}
+			
+			ul,
+			ol {
 				list-style: none;
 			}
-			html,body{
-				width:100%;
-			 	height: 100%;
-			 	overflow: hidden;
+			
+			a {
+				text-decoration: none;
+				-webkit-tap-highlight-color: red;
+				/*链接点击的高亮颜色去掉 */
+				color: #ccc;
 			}
-			 .container{
-			 	width:100%;
-			 	height: 100%;
-			 	overflow: hidden;
-			 	display: flex;
-			 	flex-direction: column;
-			 } 
-			 header{
-			 	 width: 100%;
-			 	 height:40px;
-			 	 background: #FFFF00;
-			 	 display: -webkit-flex;
-			 	  line-height: 40px;
-			 	 height: 40px;
-			 }
-			 header>span{
-			 	 width:40px;
-			 	 line-height: 40px;
-			 	 height: 40px;
-			 	 margin-top:10px;
-			 	
-			 }
-			 header p{
-			 	flex: 1;
-			 	text-align: center;
-			 }
-			 section{
-			 	flex:1;
-			 	background: red;
-			 	display:-webkit-flex;
-			 	flex-direction: column;
-			 }
-			 section #scroller{
-			 	overflow: hidden;
-			 }
-			  section .one{
-			   width:100%;
-			   height:100%;
-			   display:-webkit-flex;
-			 }
-			 section #scroller ul{
-			   width:100%;
-			   height:100%;
-			 } 
-			 footer{
-			 	width: 100%;
-			 	 height:40px;
-			 	 background:#ABCDEF;
-			 	
-			 }
-			footer ul{
-				 padding-top:6px;
-				 width:100%;
-				  display: -webkit-flex;
+			
+			.fl_lt {
+				float: left;
 			}
-			 footer ul li{
-			 	 display: -webkit-flex;
-			 	  flex:1;
-			 	  text-align: center;
-			 	  line-height: 20px;
-			 	  flex-direction: column;
-			 }
+			
+			.fl_rt {
+				float: right;
+			}
+			
+			.clearfix::after,
+			.clearfix::before {
+				content: '';
+				height: 0;
+				display: block;
+				line-height: 0;
+				clear: both;
+			}
+			
+			i {
+				font-style: normal;
+			}
+			
+			a {
+				-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+				-moz-tap-highlight-color: rgba(0, 0, 0, 0);
+				-ms-tap-highlight-color: rgba(0, 0, 0, 0);
+				-o-tap-highlight-color: rgba(0, 0, 0, 0);
+				tap-highlight-color: rgba(0, 0, 0, 0);
+			}
+			
+			section {
+				padding: 0 1rem;
+			}
+			
+			h1 {
+				font-size: 1.5rem;
+				padding: 2rem 0 2.5rem 0;
+				color: #121212;
+			}
+			
+			input {
+				border: none;
+				outline: none;
+			}
+			
+			body {
+				background: #f0f0f0;
+			}
+			
+			section {
+				width: 100%;
+				height: 100%;
+				overflow: scroll;
+				display: block;
+				padding: 0;
+			}
+			
+			.userlist li {
+				padding: 0.75rem 1rem;
+				background: #fff;
+				display: block;
+				overflow: hidden;
+			}
+			
+			.userlist li:first-child {
+				margin: 1rem 0 1.5rem 0;
+			}
+			
+			.userlist li:last-child {
+				margin-top: 1rem;
+			}
+			
+			.userlist li .notice {
+				margin-top: 0.15rem;
+			}
+			
+			.userlist li .notice:after {
+				content: "";
+				display: inline-block;
+				width: 0.4rem;
+				height: 0.75rem;
+				background: url(img/return.png) no-repeat;
+				background-size: 100% auto;
+				position: relative;
+				top: 0.1rem;
+				margin-left: 0.75rem;
+			}
+			
+			.portrait {
+				width: 4rem;
+				height: 4rem;
+			}
+			
+			.message {
+				line-height: 4rem;
+			}
+			
+			span.fl_rt {
+				font-size: 0.85rem;
+				opacity: 0.7;
+			}
+			
+			.userlist li:first-child span.fl_rt {
+				opacity: 1;
+			}
+			
+			.model {
+				width: 100%;
+				height: 100%;
+				background: rgba(0, 0, 0, 0.57);
+				position: fixed;
+				left: 0;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				display: none;
+			}
+			
+			.maskmodel {
+				height: 14rem;
+				position: fixed;
+				bottom: -14rem;
+				padding: 0 1rem;
+				width: 21.5rem;
+				margin: 0 auto;
+			}
+			
+			.choosesex {
+				border-radius: 0.75rem;
+				height: 7rem;
+				background: #fff;
+			}
+			
+			.sex,
+			#btn {
+				width: 100%;
+				text-align: center;
+				font-size: 1.5rem;
+				color: #0076FF;
+				padding: 0.8rem 0;
+			}
+			
+			.sex:last-child {
+				border-top: 1px solid #EFEFEF;
+			}
+			
+			#btn {
+				border: none;
+				background: #fff;
+				color: #EE6145;
+				border-radius: 0.75rem;
+				margin-top: 1rem;
+			}
 		</style>
 	</head>
+
 	<body>
-		<div class="container">
-			  <header>
-			  	 <span class="glyphicon glyphicon-tasks"></span>
-			  	 <p><span class="glyphicon glyphicon-lock"></span>TEST</p>
-			  	 <span class="glyphicon glyphicon-repeat"></span>
-			  </header>
-			  <section id="list">
-			  	   	<ul class="one">
-			        	<li>aaa</li>
-			        	<li>bbb</li>
-			        	<li>ccc</li>
-			       </ul>
-			        <div id="scroller">
-			        	 <ul>
-			  			<li>abc1111</li>
-			  			<li>abc2222</li>
-			  			<li>abc3333</li>
-			  			<li>abc4</li>
-			  			<li>abc5</li>
-			  			<li>abc6</li>
-			  			<li>abc7</li>
-			  			<li>abc8</li>
-			  			<li>abc9</li>
-			  			<li>abc10</li>
-			  			<li>abc11</li>
-			  			<li>abc12</li>
-			  			<li>abc13</li>
-			  			<li>abc14</li>
-			  			<li>abc15</li>
-			  			<li>abc16</li>
-			  			<li>abc17</li>
-			  			<li>abc18</li>
-			  			<li>abc19</li>
-			  			<li>abc20</li>
-			  			<li>abc21</li>
-			  			<li>abc22</li>
-			  			<li>abc23</li>
-			  			<li>abc24</li>
-			  			<li>abc25</li>
-			  			<li>abc26</li>
-			  			<li>abc27</li>
-			  			<li>abc28</li>
-			  			<li>abc29</li>
-			  			<li>abc30</li>
-			  			<li>abc31</li>
-			  			<li>abc32</li>
-			  			<li>abc33</li>
-			  			<li>abc34</li>
-			  			<li>abc35</li>
-			  			<li>abc36</li>
-			  			<li>abc37</li>
-			  			<li>abc38</li>
-			  			<li>abc39</li>
-			  			<li>abc40</li>
-			  			<li>abc41</li>
-			  			<li>abc42</li>
-			  			<li>abc43</li>
-			  			<li>abc44</li>
-			  			<li>abc45</li>
-			  			<li>abc46</li>
-			  			<li>abc47</li>
-			  			<li>abc48</li>
-			  			<li>abc49</li>
-			  			<li>abc50</li>
-			  			<li>abc51</li>
-			  			<li>abc52</li>
-			  			<li>abc53</li>
-			  			<li>abc54</li>
-			  			<li>abc55</li>
-			  			<li>abc56</li>
-			  			<li>abc57</li>
-			  			<li>abc58</li>
-			  			<li>abc59</li>
-			  			<li>abc60</li>
-			  			<li>abc61</li>
-			  			<li>abc62</li>
-			  			<li>abc63</li>
-			  			<li>abc64</li>
-			  			<li>abc65</li>
-			  			<li>abc66</li>
-			  			<li>abc67</li>
-			  			<li>abc68</li>
-			  			<li>abc69</li>
-			  			<li>abc70</li>
-			  			<li>abc71</li>
-			  			<li>abc72</li>
-			  			<li>abc73</li>
-			  			<li>abc74</li>
-			  			<li>abc75</li>
-			  			<li>abc76</li>
-			  			<li>abc77</li>
-			  			<li>abc78</li>
-			  			<li>abc79</li>
-			  			<li>abc80</li>
-			  			<li>abc81</li>
-			  			<li>abc82</li>
-			  			<li>abc83</li>
-			  			<li>abc84</li>
-			  			<li>abc85</li>
-			  			<li>abc86</li>
-			  			<li>abc87</li>
-			  			<li>abc88</li>
-			  			<li>abc89</li>
-			  			<li>abc90</li>
-			  			<li>abc91</li>
-			  			<li>abc92</li>
-			  			<li>abc93</li>
-			  			<li>abc94</li>
-			  			<li>abc95</li>
-			  			<li>abc96</li>
-			  			<li>abc97</li>
-			  			<li>abc98</li>
-			  			<li>abc99</li>
-			  			<li>abc100</li>
-			  		</ul>
-			        </div>
-			  </section>
-			  <footer>
-			  	   <ul><li><span class="glyphicon glyphicon-adjust"></span><b>abc</b></li>
-			  	  <li><span class="glyphicon glyphicon-adjust"></span><b>abc</b>
-			  	   <li><span class="glyphicon glyphicon-adjust"></span><b>abc</b>
-			  	   	<li><span class="glyphicon glyphicon-adjust"></span><b>abc</b>
-			  	   </ul>
-			  </footer>
-		</div>
-	<script>
-		  var a = new IScroll('#scroller');
-		 
-	</script>
+		<section>
+			<ul class="userlist">
+				<li id="headimg"><span class="message text">头像</span><span class="fl_rt"><img class="portrait" src="img/user.png" alt="" /></span></li>
+				<li id="name"><span class="myproblem text">昵称</span><span class="fl_rt notice">胡萝卜</span></li>
+				<li id="sex"><span class="survey text">性别</span><span class="fl_rt notice">女</span></li>
+				<li id="theclass"><span class="phone text">班级</span><span class="fl_rt" style="margin-top: 0.15rem;">2017职业全能班32期</span></li>
+				<li><input id="takepicture" type="file" accept="image/*" capture="camera">拍照</li>
+			</ul>
+			<div class="model">
+				<div class="maskmodel">
+					<div class="choosesex">
+						<p class="sex" name="M">男</p>
+						<p class="sex" name="F">女</p>
+					</div>
+					<button id="btn">取消</button>
+				</div>
+			</div>
+		</section>
+		<script>
+			var takePictureOnclick = function() {
+				var takePicture = document.getElementById('takepicture');
+				// 添加需要处理的代码
+				takePicture.click();
+			}
+			var takePicture = document.getElementById('takepicture');
+			var takePictureUrl = function() {
+				takePicture.onchange = function(event) {
+					var files = event.target.files,
+						file;
+					if(files && files.length > 0) {
+						file = files[0];
+						try {
+							var URL = window.URL || window.webkitURL;
+							var blob = URL.createObjectURL(file);　　 // 获取照片的文件流
+							compressPicture(blob);　　 // 压缩照片
+						} catch(e) {
+							try {
+								var fileReader = new FileReader();
+								fileReader.onload = function(event) {　　　　 // 获取照片的base64编码
+									compressPicture(event.target.result);　　 // 压缩照片
+								};
+								fileReader.readAsDataURL(file);
+							} catch(e) {
+								alert(common.MESSAGE.title.error, '拍照失败,请联系客服或尝试更换手机再试!');
+							}
+						}
+					}
+				}
+			}();
+		</script>
 	</body>
+
 </html>
